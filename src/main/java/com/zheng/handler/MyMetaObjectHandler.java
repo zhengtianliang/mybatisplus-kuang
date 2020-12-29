@@ -22,14 +22,14 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void insertFill(MetaObject metaObject) {
         log.info("start insertFill ");
-        this.setFieldValByName("createTime", LocalDateTime.now(),metaObject);
-        this.setFieldValByName("modifyTime", LocalDateTime.now(),metaObject);
+        this.setFieldValByName("createTime", LocalDateTime.now(), metaObject);
+        this.setFieldValByName("modifyTime", LocalDateTime.now(), metaObject);
     }
 
     // 更新填充时的策略
     @Override
     public void updateFill(MetaObject metaObject) {
         log.info("start updateFill ");
-        this.setFieldValByName("modifyTime",LocalDateTime.now(),metaObject);
+        this.setFieldValByName("modifyTime", LocalDateTime.now(), metaObject);
     }
 }

@@ -36,26 +36,26 @@ class MybatisplusKuangApplicationTests {
     }
 
     @Test
-    public void test01(){
+    public void test01() {
         List<User> users = userMapper.selectList(null);
         users.forEach(System.out::println);
     }
 
     @Test
-    public void test02(){
-       User user = new User();
-       user.setName("你好");
-       user.setAge(1231231);
-       user.setId(7l);
+    public void test02() {
+        User user = new User();
+        user.setName("你好");
+        user.setAge(1231231);
+        user.setId(7l);
 
-       //userService.save(user);
+        //userService.save(user);
         //userService.removeById(5);
         userService.updateById(user);
     }
 
     // 测试乐观锁。成功案例
     @Test
-    public void test03(){
+    public void test03() {
         User user = userMapper.selectById(7l);
         // SELECT id,name,age,email,reversion,create_time,modify_time FROM user WHERE id=?
         user.setName("lsdjd");
@@ -67,28 +67,28 @@ class MybatisplusKuangApplicationTests {
 
     // 测试分页
     @Test
-    public void test04(){
+    public void test04() {
         Page<User> page = new Page<>(1, 5);
-        userMapper.selectPage(page,null);
+        userMapper.selectPage(page, null);
 
         page.getRecords().forEach(System.out::println);
-        System.out.println("总条数为："+page.getTotal());
+        System.out.println("总条数为：" + page.getTotal());
 
     }
 
     // 测试删除,物理删除
     @Test
-    public void test05(){
+    public void test05() {
         // 通过id删除
         //int i = userMapper.deleteById("9"); // DELETE FROM user WHERE id=?
-       // boolean a = userService.removeById("10");  // DELETE FROM user WHERE id=?
+        // boolean a = userService.removeById("10");  // DELETE FROM user WHERE id=?
 
         // 通过id批量删除
-       // int i = userMapper.deleteBatchIds(Arrays.asList(8,10)); //  DELETE FROM user WHERE id IN ( ? , ? )
+        // int i = userMapper.deleteBatchIds(Arrays.asList(8,10)); //  DELETE FROM user WHERE id IN ( ? , ? )
 
         // 通过条件删除
-        Map<String,Object> map = new HashMap<>();
-        map.put("name","Tom");
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", "Tom");
         int i = userMapper.deleteByMap(map); //  DELETE FROM user WHERE name = ?
 
         System.out.println(i);
@@ -98,7 +98,7 @@ class MybatisplusKuangApplicationTests {
 
 
     @Test
-    public void testGenerateCode(){
+    public void testGenerateCode() {
         // 需要构建一个代码生成器对象
         AutoGenerator autoGenerator = new AutoGenerator();
 
@@ -106,8 +106,8 @@ class MybatisplusKuangApplicationTests {
         // 1、全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        System.out.println("项目的路径是："+projectPath);
-        gc.setOutputDir(projectPath+"src/main/java"); // 生成的代码的存放路径
+        System.out.println("项目的路径是：" + projectPath);
+        gc.setOutputDir(projectPath + "src/main/java"); // 生成的代码的存放路径
         gc.setAuthor("ZhengTianLiang_mybatis_plus_auto"); // 设置作者
         gc.setOpen(false); // 是否自动打开文件夹
         gc.setFileOverride(false); // 是否覆盖

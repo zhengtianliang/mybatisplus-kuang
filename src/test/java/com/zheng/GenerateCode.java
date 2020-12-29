@@ -33,8 +33,8 @@ public class GenerateCode {
         // 1、全局配置
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
-        System.out.println("项目的路径是："+projectPath);
-        gc.setOutputDir(projectPath+"src/main/java"); // 生成的代码的存放路径
+        System.out.println("项目的路径是：" + projectPath);
+        gc.setOutputDir(projectPath + "src/main/java"); // 生成的代码的存放路径
         gc.setAuthor("ZhengTianLiang_mybatis_plus_auto"); // 设置作者
         gc.setOpen(false); // 是否自动打开文件夹
         gc.setFileOverride(true); // 是否覆盖
@@ -68,7 +68,7 @@ public class GenerateCode {
 
         // 策略配置
         StrategyConfig strategyConfig = new StrategyConfig();
-        strategyConfig.setInclude("clas","product"); // 设置要生成的表名，可以多个，只生成这个对应的表
+        strategyConfig.setInclude("clas", "product"); // 设置要生成的表名，可以多个，只生成这个对应的表
         strategyConfig.setNaming(NamingStrategy.underline_to_camel); // 包的命名规则(下划线变驼峰)
         strategyConfig.setColumnNaming(NamingStrategy.underline_to_camel); // 列的命名规则(下划线变驼峰)
         // strategyConfig.setSuperEntityClass("你自己的父类实体,没有就不用设置!");

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hollycrm.hollycloud.ics.knowledge.admin.mapper.ForbidWordsMapper">
+
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="forbidResultMap" type="com.hollycrm.hollycloud.ics.knowledge.admin.vo.ForbidWordsVO">
+        <id column="id" property="id"/>
+        <result column="forbidWords" property="ForbidWords"/>
+        <result column="en_code" property="enCode"/>
+        <result column="en_full_name" property="enFullName"/>
+        <result column="spell_code" property="spellCode"/>
+    </resultMap>
+
+    <select id="queryForbidListByCondition" resultMap="forbidResultMap">
+        SELECT
+        id,
+        forbid_words,
+        en_code,
+        en_full_name,
+        spell_code
+        FROM
+        tb_forbid_words
+        <where>
+            is_invalid = '1'
+            <if test="forbidWords != null and forbidWords != ''">
+                AND forbid_words LIKE CONCAT('%',#{forbidWords},'%')
+            </if>
+        </where>
+        ORDER BY create_time DESC
+    </select>
+
+
+</mapper>

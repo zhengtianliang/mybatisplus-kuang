@@ -9,5 +9,5 @@ import com.zheng.pojo.User;
  * @desc: 用户表的mapper文件
  */
 
-public interface UserMapper  extends BaseMapper<User> {
+public interface UserMapper extends BaseMapper<User> {
 }
