@@ -54,7 +54,7 @@ public class MybatisPlusConfig {
     @Profile({"dev", "test"}) // 设置  是dev、test环境下才会开启，保证线上环境的效率
     public PerformanceInterceptor getPerformanceIntercepter() {
         PerformanceInterceptor performanceInterceptor = new PerformanceInterceptor();
-        performanceInterceptor.setMaxTime(100); // 设置sql执行的最大时间，超过了这个时间就会报错，单位是毫秒
+        performanceInterceptor.setMaxTime(10000); // 设置sql执行的最大时间，超过了这个时间就会报错，单位是毫秒
         performanceInterceptor.setFormat(true); // 设置sql的格式化
 
         return performanceInterceptor;
