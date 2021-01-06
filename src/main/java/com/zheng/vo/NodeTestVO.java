@@ -1,6 +1,5 @@
 package com.zheng.vo;
 
-import com.zheng.pojo.Node;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,13 +8,16 @@ import java.util.List;
 
 /**
  * @author: ZhengTianLiang
- * @date: 2020/12/29  21:31
- * @desc: 返回实体，前段展示用
+ * @date: 2020/12/31  16:23
+ * @desc:
  */
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class NodeVo {
-    List<Node> nodeList;
+public class NodeTestVO {
+
+    private Integer id;
+    private List<NodeTestVO> nextIds;
+
 }

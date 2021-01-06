@@ -9,6 +9,7 @@ spring:
   profiles:
     active: dev
 
+
 #by zhengkai.blog.csdn.net
 #mybatis-plus配置控制台打印完整带参数SQL语句
 mybatis-plus:
@@ -18,6 +19,8 @@ mybatis-plus:
     db-config:
       logic-delete-value: 0   # 已删除的，0(默认为1)
       logic-not-delete-value: 1 # 1是有效的  未删除的(默认为0)
+#  mapper-locations: classpath:mapper/*Mapper.xml
+#  type-aliases-package: com.zheng.pojo.KnowledgeNode
 
 
 

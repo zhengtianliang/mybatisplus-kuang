@@ -60,7 +60,7 @@ public class GenerateCode {
         packageConfig.setModuleName("blog"); // 生成的代码都在这个包下面
         packageConfig.setParent("com.zheng"); // 设置包名
         packageConfig.setEntity("entity"); // 设置实体类的包的名
-        packageConfig.setMapper("mapper"); // 设置mapper的名
+        packageConfig.setMapper("com"); // 设置mapper的名
         packageConfig.setService("service"); // 设置service
         packageConfig.setController("controller"); // 设置controller
 

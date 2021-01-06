@@ -1,8 +1,12 @@
 package com.zheng.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.zheng.dto.NodeDTO;
+import com.zheng.pojo.KnowledgeNodeRelation;
 import com.zheng.pojo.Node;
 import com.zheng.pojo.User;
+
+import java.util.List;
 
 /**
  * @author: ZhengTianLiang
@@ -11,4 +15,7 @@ import com.zheng.pojo.User;
  */
 
 public interface NodeService extends IService<Node> {
+    List<KnowledgeNodeRelation> testDoron();
+
+    NodeDTO findNodeContentAndTypeById(Integer nodeId);
 }

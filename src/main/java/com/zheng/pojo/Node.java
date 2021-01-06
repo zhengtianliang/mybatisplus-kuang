@@ -1,10 +1,13 @@
 package com.zheng.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 /**
  * @author: ZhengTianLiang
@@ -26,4 +29,7 @@ public class Node extends Model<Node> {
     private Integer sequence;
     // 第几层
     private Integer lavel;
+
+    @TableField(exist = false)
+    private List<Node> childNodeList;
 }
